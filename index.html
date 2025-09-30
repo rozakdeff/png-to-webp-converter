@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverter Gambar Massal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-blue': '#4a90e2',
+              'primary-green': '#50e3c2',
+              'dark-bg': '#f8f9fa',
+              'card-bg': '#ffffff',
+            },
+            boxShadow: {
+                'cool-shadow': '0 10px 30px rgba(0, 0, 0, 0.08)',
+            },
+          }
+        }
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body class="bg-dark-bg min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-2xl shadow-cool-shadow max-w-4xl w-full text-center">
+        <h1 class="text-4xl font-extrabold mb-2 text-gray-800">Konverter Gambar Massal</h1>
+        <p class="text-lg text-gray-500 mb-8">Pilih banyak gambar, dan tentukan format untuk setiap gambar.</p>
+        
+        <div class="mb-8">
+            <label for="image-input" class="inline-block cursor-pointer bg-primary-blue text-white py-3 px-6 rounded-full font-bold shadow-lg transform hover:scale-105 transition duration-300">
+                Pilih Gambar
+            </label>
+            <input type="file" id="image-input" accept="image/*" class="hidden" multiple>
+        </div>
+
+        <div id="preview-area" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 hidden">
+            </div>
+
+        <div id="options-area" class="mb-4 hidden">
+            <button id="convert-button" class="w-full bg-primary-green text-white py-3 px-6 rounded-full font-bold shadow-lg transform hover:scale-105 transition duration-300">
+                Konversi & Unduh
+            </button>
+        </div>
+
+        <div id="message-area" class="text-red-500 mt-4 font-medium"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
